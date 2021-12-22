@@ -1,4 +1,4 @@
-import { useEffect } from "react/cjs/react.development";
+import { useEffect } from "react";
 import QuoteList from "../components/quotes/QuoteList";
 import useHttp from "../hooks/use-http";
 import { getAllQuotes } from "../libs/api";
@@ -26,7 +26,7 @@ const AllQuotes = () => {
   }
 
   if (error) {
-    return <div className="centered focused">{error}</div>;
+    return <p className="centered focused">{error}</p>;
   }
 
   if (status === 'completed' && (!loadedQuotes || loadedQuotes.length === 0)) {
